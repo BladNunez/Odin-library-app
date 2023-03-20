@@ -28,5 +28,24 @@ function addBookToLibrary(){
         myLibrary.push(bookThree);
 }
 
+//function to loop through array and display on web page
+function displayBooks(){
+        const topContainer = document.querySelector('.top-container');
+
+        myLibrary.forEach(element => {
+                const child = document.createElement('div');
+                //add element in array to div created
+                const myObj = JSON.stringify(element);
+                child.innerHTML = myObj;
+                topContainer.appendChild(child);
+
+        });
+}
+
+addBookToLibrary();
+displayBooks();
+
+
+
 
 
