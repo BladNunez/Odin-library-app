@@ -1,4 +1,9 @@
-table , th, td{
-        border:1px solid black;
+.top-container{
+        display: flex;
+        justify-content: space-evenly;
+}
+
+.top-container > div{
+        border: 1px solid black;
         width: 100%;
 }
