@@ -4,6 +4,10 @@ function Book(title,author,pages,read){
         this.title = title;
         this.pages = pages;
         this.read = read;
+        this.display = function(){
+                return "Title: " + this.title + "\n" + "Author: " + this.author + "\n" +
+                       "Pages: " + this.pages + "\n" + "Read?: " + this.read
+        }
 }
 
 //array to contain new book objects
