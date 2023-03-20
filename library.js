@@ -20,7 +20,13 @@ function addBookToLibrary(){
         const read = prompt("Have you read book?:");
 
         const bookOne = new Book(title,author,pages,read);
+        const bookTwo = new Book('Alexander The Great','Kevin BlackWell',300,'Yes');
+        const bookThree = new Book('The Fort','Ray Charles',220,'No');
 
         myLibrary.push(bookOne);
-        
+        myLibrary.push(bookTwo);
+        myLibrary.push(bookThree);
 }
+
+
+
