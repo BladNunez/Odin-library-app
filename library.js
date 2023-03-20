@@ -6,3 +6,9 @@ function Book(name,title,pages,read){
         this.read = read;
 }
 
+//array to contain new book objects
+let myLibrary = [];
+
+function addBookToLibrary(){
+        
+}
