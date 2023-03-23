@@ -42,8 +42,31 @@ function displayBooks(){
         });
 }
 
-addBookToLibrary();
-displayBooks();
+function createForm(){
+        const createDiv = document.createElement('div');
+        const createForm = document.createElement('form');
+
+        const authorLabel = document.createElement('label');
+        const titleLabel = document.createElement('label');
+        const pagesLabel = document.createElement('label');
+        const readLabel = document.createElement('label');
+
+        const authorInput = document.createElement('input');
+        const titleInput = document.createElement('input');
+        const pagesInput = document.createElement('input');
+        const readInput = document.createElement('input');
+
+        createForm.appendChild(authorLabel);
+        createForm.appendChild(authorInput);
+        createForm.appendChild(titleLabel);
+        createForm.appendChild(titleInput);
+        createForm.appendChild(pagesLabel);
+        createForm.appendChild(pagesInput);
+        createForm.appendChild(readLabel);
+        createForm.appendChild(readInput);
+
+        createDiv.appendChild(createForm);
+}
 
 
 
