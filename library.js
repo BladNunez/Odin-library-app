@@ -45,10 +45,10 @@ function displayBooks(){
 
 const button = document.querySelector('button');
 const container = document.getElementById('#content-container');
+const form = document.getElementById("#bookForm");
 
 button.addEventListener('click' , function() {
-
-        
+        document.getElementById("bookForm").style.display = "block";
 
 });
 
