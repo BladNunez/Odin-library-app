@@ -52,6 +52,6 @@ button.addEventListener('click' , function() {
 
 });
 
-
-
-
+window.onload = function() {
+        document.getElementById("bookForm").style.display = "none";
+      };
