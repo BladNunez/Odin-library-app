@@ -14,23 +14,20 @@ function Book(title,author,pages,read){
 let myLibrary = [];
 
 function addBookToLibrary(){
-        const title = prompt("Title of book?:");
-        const author = prompt("Author of book?:");
-        const pages = Number(prompt("Amount of pages?:"));
-        const read = prompt("Have you read book?:");
+        const title = document.getElementById('title').value;
+        const author = document.getElementById('author').value;
+        const pages = document.getElementById('pages').value;
+        const read = document.getElementById('read').value;
 
         const bookOne = new Book(title,author,pages,read);
-        const bookTwo = new Book('Alexander The Great','Kevin BlackWell',300,'Yes');
-        const bookThree = new Book('The Fort','Ray Charles',220,'No');
 
         myLibrary.push(bookOne);
-        myLibrary.push(bookTwo);
-        myLibrary.push(bookThree);
+        
 }
 
 //function to loop through array and display on web page
 function displayBooks(){
-        const topContainer = document.querySelector('.top-container');
+        const topContainer = document.querySelector('.content-container');
 
         myLibrary.forEach(element => {
                 const child = document.createElement('div');
@@ -53,17 +50,24 @@ button.addEventListener('click' , function(e) {
 const submit = document.getElementById('submitButton');
 
 submit.addEventListener('click',function(e){
+        
+        addBookToLibrary();
 
-        let bookInfo = new Book(document.getElementById('title').value,
-                                document.getElementById('author').value,
-                                document.getElementById('pages').value,
-                                document.getElementById('read').value);
-                                      
-        //let myObj = JSON.stringify(bookInfo);
-        e.preventDefault();  
+        
+
+        myLibrary.forEach(element => {
+                
+               console.log(element.display());
+                
+
+        });
+        
+
+        e.preventDefault(); 
 });
 
 
 window.onload = function() {
         document.getElementById("bookForm").style.display = "none";
       };
+
