@@ -45,6 +45,7 @@ const container = document.getElementById('#content-container');
 
 button.addEventListener('click' , function(e) {
         document.getElementById("bookForm").style.display = "block";
+        document.getElementById("bookForm").reset();
 });
 
 const submit = document.getElementById('submitButton');
@@ -52,8 +53,8 @@ const submit = document.getElementById('submitButton');
 submit.addEventListener('click',function(e){
         
         addBookToLibrary();
+        document.getElementById("bookForm").style.display = "none";
 
-        
 
         myLibrary.forEach(element => {
                 
