@@ -14,6 +14,7 @@ function Book(title,author,pages,read){
 let myLibrary = [];
 
 function addBookToLibrary(){
+        event.preventDefault(); 
         const title = document.getElementById('title').value;
         const author = document.getElementById('author').value;
         const pages = document.getElementById('pages').value;
@@ -56,14 +57,10 @@ submit.addEventListener('click',function(e){
         document.getElementById("bookForm").style.display = "none";
 
 
-        myLibrary.forEach(element => {
-                
+        myLibrary.forEach(element => {         
                console.log(element.display());
-                
-
         });
         
-
         e.preventDefault(); 
 });
 
