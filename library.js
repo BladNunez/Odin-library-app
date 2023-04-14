@@ -4,21 +4,16 @@ function Book(title,author,pages,read){
         this.title = title;
         this.pages = pages;
         this.read = read;
-        this.display = function(){
-                return "Title: " + this.title + "\n" + "Author: " + this.author + "\n" +
-                       "Pages: " + this.pages + "\n" + "Read?: " + this.read
-        }
 }
 
 //array to contain new book objects
 let myLibrary = [];
 
 function addBookToLibrary(){
-        event.preventDefault(); 
-        const title = document.getElementById('title').value;
-        const author = document.getElementById('author').value;
-        const pages = document.getElementById('pages').value;
-        const read = document.getElementById('read').value;
+        let title = document.getElementById('title').value;
+        let author = document.getElementById('author').value;
+        let pages = document.getElementById('pages').value;
+        let read = document.getElementById('read').value;
 
         const bookOne = new Book(title,author,pages,read);
 
@@ -28,16 +23,19 @@ function addBookToLibrary(){
 
 //function to loop through array and display on web page
 function displayBooks(){
-        const topContainer = document.querySelector('.content-container');
+        const topContainer = document.querySelector('#newBook');
 
-        myLibrary.forEach(element => {
-                const child = document.createElement('div');
-                //add element in array to div created
-                const myObj = JSON.stringify(element);
-                child.innerHTML = myObj;
-                topContainer.appendChild(child);
+        let htmlElement = "";
 
-        });
+        for(let book of myLibrary){
+                htmlElement += `<div>Title: ${book.title} <br>
+                                     Author: ${book.author} <br>
+                                     Pages: ${book.pages} <br>
+                                     Read: ${book.read}</div>`
+                
+        }
+
+        topContainer.innerHTML = htmlElement;    
 }
 
 
@@ -45,24 +43,19 @@ const button = document.querySelector('button');
 const container = document.getElementById('#content-container');
 
 button.addEventListener('click' , function(e) {
-        document.getElementById("bookForm").style.display = "block";
         document.getElementById("bookForm").reset();
+        document.getElementById("bookForm").style.display = "block";
 });
 
 const submit = document.getElementById('submitButton');
 
 submit.addEventListener('click',function(e){
-        
+        e.preventDefault();
         addBookToLibrary();
         document.getElementById("bookForm").style.display = "none";
-
-
-        myLibrary.forEach(element => {         
-               console.log(element.display());
-        });
-        
-        e.preventDefault(); 
+        displayBooks();
 });
+
 
 
 window.onload = function() {
