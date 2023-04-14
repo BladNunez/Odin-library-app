@@ -39,23 +39,27 @@ h3{
 }
 
 #form{
-        width: 300px;
-        background-color: darkcyan;
-        position: relative;
-        margin: 0 auto;
-        top: 2%;
-
-}
-
-#bookForm{
         display: flex;
-        flex-direction: column;
+        justify-content: space-around;
+        width: 200px;
+        background-color:darkgrey;
+        position: fixed;
+        margin: 0 auto;
+        top: 25%;
+        right: 5%;
+        left: 5%;
+        border-radius: 10px;
+        padding: 10px;
+        gap: 3px 4px;
+        border: 2px solid black; 
 }
+
 
 .formRow{
-        display:flex;
-        justify-content: space-between;
-        width:300px;
+        display: flex;
+        flex-direction: column;
+        /*width:250px;
+        row-gap: 5px; */
 }
 
 #newBook{
@@ -63,6 +67,28 @@ h3{
         flex-wrap: wrap;
         column-gap: 40px;
         row-gap: 40px;
-        padding: 30px;
+        padding-bottom: 5px;
+        padding: 20px;
+}
+
+#newBook > div{
+        width: 200px;
+        height: 120px;
+        background-color: white;
+        padding: 10px;
+        border-radius: 10px;
+        border: 2px solid black;
+}
+
+label{
+        margin-top: 3px;
+}
+
+form > button{
+        margin-top: 5px;
+}
+
+input{
+        border-radius: 2px;
 }
 
