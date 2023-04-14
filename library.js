@@ -33,6 +33,7 @@ function displayBooks(){
                                      Pages: ${book.pages} <br>
                                      Read: ${book.read}</div>`
                 
+                
         }
 
         topContainer.innerHTML = htmlElement;    
