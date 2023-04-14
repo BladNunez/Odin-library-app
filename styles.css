@@ -40,8 +40,10 @@ h3{
 
 #form{
         width: 300px;
-        margin:auto;
         background-color: darkcyan;
+        position: relative;
+        margin: 0 auto;
+        top: 2%;
 
 }
 
@@ -54,5 +56,13 @@ h3{
         display:flex;
         justify-content: space-between;
         width:300px;
+}
+
+#newBook{
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 40px;
+        row-gap: 40px;
+        padding: 30px;
 }
 
