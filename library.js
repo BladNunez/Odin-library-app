@@ -21,27 +21,36 @@ function addBookToLibrary(){
         
 }
 
+//global variable for delete button inside book entry container
+const d = document.createElement('button');
+d.innerText = 'Delete';
+d.type = 'button';
+
+
 //function to loop through array and display on web page
 function displayBooks(){
         const topContainer = document.querySelector('#newBook');
 
         let htmlElement = "";
+       
+
 
         for(let book of myLibrary){
                 htmlElement += `<div>Title: ${book.title} <br>
                                      Author: ${book.author} <br>
                                      Pages: ${book.pages} <br>
-                                     Read: ${book.read}</div>`
-                
-                
+                                     Read: ${book.read} <br>
+                                     ${d.outerHTML}
+                                     </div>`   
         }
 
-        topContainer.innerHTML = htmlElement;    
+        topContainer.innerHTML = htmlElement;     
 }
 
 
 const button = document.querySelector('button');
 const container = document.getElementById('#content-container');
+const deleteButton = document.querySelector('#delete');
 
 button.addEventListener('click' , function(e) {
         document.getElementById("bookForm").reset();
@@ -58,8 +67,12 @@ submit.addEventListener('click',function(e){
 });
 
 
+d.addEventListener('click',function(){
+        console.log("Hello");
+});
+
+
 
 window.onload = function() {
         document.getElementById("bookForm").style.display = "none";
       };
-
